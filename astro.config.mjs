@@ -6,9 +6,10 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://partha607.github.io',
+  base: 'sky-drink',
   vite: {
     plugins: [tailwindcss()]
   },
-
   integrations: [react()]
 });
