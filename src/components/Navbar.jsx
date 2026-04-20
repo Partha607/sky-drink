@@ -24,10 +24,14 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center pr-8 md:pr-12">
           
-          <div className="flex items-center gap-2 clickable">
-            <Zap className="w-8 h-8 text-yellow-400 fill-yellow-400" />
-            <span className="text-3xl font-black tracking-tighter uppercase italic text-white leading-none pt-1">Sky Drink</span>
-          </div>
+          {/* Logo - loud and prominent */}
+          <a href="#showcase" className="clickable flex items-center group">
+            <img 
+              src="/logo.png" 
+              alt="Sky Drink Logo" 
+              className="h-20 md:h-24 w-auto transition-all duration-300 transform group-hover:-translate-y-1 group-hover:scale-105 [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.15))]" 
+            />
+          </a>
           
           <div className="hidden md:flex items-center gap-8 font-bold tracking-wide uppercase text-sm text-white">
             <a href="#showcase" className="clickable hover:text-yellow-400 transition-colors">Showcase</a>
@@ -59,10 +63,14 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 bg-zinc-950 z-[100] flex flex-col p-6 animate-in fade-in zoom-in-95 duration-200">
           <div className="flex justify-between items-center mb-12">
-            <div className="flex items-center gap-2">
-              <Zap className="w-8 h-8 text-yellow-400 fill-yellow-400" />
-              <span className="text-3xl font-black tracking-tighter uppercase italic text-white leading-none pt-1">Sky Drink</span>
-            </div>
+            {/* Mobile menu logo */}
+            <a href="#showcase" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+              <img 
+                src="/logo.png" 
+                alt="Sky Drink Logo" 
+                className="h-24 w-auto [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.15))]" 
+              />
+            </a>
             <button 
               className="text-white p-2"
               onClick={() => setMobileMenuOpen(false)}
