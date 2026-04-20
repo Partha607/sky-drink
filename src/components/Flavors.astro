@@ -38,22 +38,27 @@ const flavors = [
         <div class="clickable group relative rounded-3xl overflow-hidden gs-fade-up">
           <div class:list={[`absolute -inset-1 bg-gradient-to-r rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-500`, flavor.color]}></div>
           
-          <div class="relative bg-zinc-950 rounded-3xl overflow-hidden h-[600px] flex flex-col border border-zinc-800 p-4">
+          <div class:list={["relative rounded-3xl overflow-hidden h-[600px] flex flex-col border border-zinc-800 bg-zinc-950 transition-colors duration-500 group-hover:border-white/20", flavor.color.replace('from-', 'bg-gradient-to-br from-').replace('to-', 'to-') ]}>
+            <div class="absolute inset-0 opacity-10 bg-zinc-950"></div>
             <div class="w-full h-full overflow-hidden relative flex items-center justify-center">
               <Image 
                 src={flavor.image} 
                 alt={`${flavor.name} Sky Drink`} 
                 width={800}
-                class="max-w-full max-h-full object-contain transform transition-all duration-700 group-hover:scale-110 group-hover:drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                class="max-w-full max-h-full object-contain transform transition-all duration-700 group-hover:scale-110 group-hover:drop-shadow-[0_0_50px_rgba(255,255,255,0.3)] z-10"
               />
-              <!-- Mobile: always visible overlay. Desktop: on hover only -->
-              <div class="absolute inset-0 bg-black/60 lg:bg-black/50 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm lg:group-hover:backdrop-blur-sm">
-                <div class="text-center p-6 lg:translate-y-8 lg:group-hover:translate-y-0 transition-transform duration-500">
+              <!-- Overlay: Hidden by default (opacity-0), visible on hover/active -->
+              <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm z-20">
+                <div class="text-center p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                   <h3 class="text-4xl font-black uppercase mb-3 drop-shadow-lg text-white">{flavor.name}</h3>
                   <p class="text-zinc-200 font-medium text-lg mb-6">{flavor.description}</p>
-                  <button class="bg-white text-black font-black uppercase px-6 py-4 lg:py-2 rounded-full hover:scale-105 active:scale-95 transition-transform">
+                  <a 
+                    href={flavor.image.src} 
+                    target="_blank" 
+                    class="bg-white text-black font-black uppercase px-8 py-3 rounded-full hover:scale-105 active:scale-95 transition-transform inline-block"
+                  >
                     Grab Yours
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
