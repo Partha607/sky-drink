@@ -38,13 +38,13 @@ const flavors = [
         <div class="clickable group relative rounded-3xl overflow-hidden gs-fade-up">
           <div class:list={[`absolute -inset-1 bg-gradient-to-r rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-500`, flavor.color]}></div>
           
-          <div class="relative bg-zinc-950 rounded-3xl overflow-hidden h-[600px] flex flex-col border border-zinc-800 p-12">
+          <div class="relative bg-zinc-950 rounded-3xl overflow-hidden h-[600px] flex flex-col border border-zinc-800 p-4">
             <div class="w-full h-full overflow-hidden relative flex items-center justify-center">
               <Image 
                 src={flavor.image} 
                 alt={`${flavor.name} Sky Drink`} 
                 width={800}
-                class="max-w-full max-h-full object-contain transform transition-transform duration-700"
+                class="max-w-full max-h-full object-contain transform transition-all duration-700 group-hover:scale-110 group-hover:drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]"
               />
               <!-- Mobile: always visible overlay. Desktop: on hover only -->
               <div class="absolute inset-0 bg-black/60 lg:bg-black/50 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm lg:group-hover:backdrop-blur-sm">
