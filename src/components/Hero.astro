@@ -1,8 +1,8 @@
 ---
-import promoVideo from '../assets/Sky-Drink-promo.mp4';
+import promoVideo from '../assets/Sky-Drink-promo-white.mp4';
 ---
 
-<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#673c52]" id="showcase">
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden" id="showcase">
   <!-- Glowing Background Ambience -->
   <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-yellow-500/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
   <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
@@ -38,16 +38,18 @@ import promoVideo from '../assets/Sky-Drink-promo.mp4';
       </div>
     </div>
 
-    <!-- Video Pod (Fully Borderless using CSS Masking) -->
+    <!-- Transparent Video Pod -->
     <div class="order-1 lg:order-2 flex justify-center lg:justify-end relative gs-fade-up gs-delay">
       <div class="relative w-full max-w-sm shrink-0 aspect-[9/16] group clickable">
+        <!-- Optional: A very subtle glow behind the bottle since it's transparent, helping it pop -->
+        <div class="absolute inset-0 bg-yellow-400/10 blur-[80px] rounded-full pointer-events-none z-0"></div>
         <video 
           src={promoVideo} 
           autoplay 
           loop 
           muted 
           playsinline
-          class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)] -webkit-[mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
+          class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700 relative z-10"
         ></video>
         
         <div class="absolute bottom-6 left-0 w-full text-center z-20 pointer-events-none">
@@ -62,7 +64,4 @@ import promoVideo from '../assets/Sky-Drink-promo.mp4';
     </div>
 
   </div>
-  
-  <!-- Fade transition gradient to smoothly connect to the section below -->
-  <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-zinc-950 pointer-events-none z-10"></div>
 </section>
