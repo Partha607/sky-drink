@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zap, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import InstagramIcon from './InstagramIcon.jsx';
 
 export default function Navbar() {
