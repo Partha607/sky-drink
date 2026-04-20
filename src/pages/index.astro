@@ -12,6 +12,7 @@ import PriceTag from '../components/PriceTag.astro';
 import RootsMap from '../components/RootsMap.jsx';
 import VibeCheck from '../components/VibeCheck.jsx';
 import InstagramIcon from '../components/InstagramIcon.jsx';
+import logo from '../assets/logo.png';
 ---
 
 <Layout>
@@ -35,7 +36,7 @@ import InstagramIcon from '../components/InstagramIcon.jsx';
       <div class="flex flex-col items-center md:items-start gap-2">
         <div class="flex items-center clickable">
           <img 
-            src="/logo.png" 
+            src={logo.src} 
             alt="Sky Drink Logo" 
             class="h-28 md:h-32 w-auto [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.15))]" 
           />

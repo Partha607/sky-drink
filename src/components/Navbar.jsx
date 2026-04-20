@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import InstagramIcon from './InstagramIcon.jsx';
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +28,7 @@ export default function Navbar() {
           {/* Logo - loud and prominent */}
           <a href="#showcase" className="clickable flex items-center group">
             <img 
-              src="/logo.png" 
+              src={logo.src} 
               alt="Sky Drink Logo" 
               className="h-20 md:h-24 w-auto transition-all duration-300 transform group-hover:-translate-y-1 group-hover:scale-105 [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.15))]" 
             />
@@ -66,7 +67,7 @@ export default function Navbar() {
             {/* Mobile menu logo */}
             <a href="#showcase" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
               <img 
-                src="/logo.png" 
+                src={logo.src} 
                 alt="Sky Drink Logo" 
                 className="h-24 w-auto [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.15))]" 
               />
