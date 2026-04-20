@@ -38,16 +38,16 @@ const flavors = [
         <div class="clickable group relative rounded-3xl overflow-hidden gs-fade-up">
           <div class:list={[`absolute -inset-1 bg-gradient-to-r rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-500`, flavor.color]}></div>
           
-          <div class="relative bg-zinc-950 rounded-3xl overflow-hidden h-[600px] flex flex-col border border-zinc-800">
-            <div class="w-full h-full overflow-hidden relative">
+          <div class="relative bg-zinc-950 rounded-3xl overflow-hidden h-[600px] flex flex-col border border-zinc-800 p-12">
+            <div class="w-full h-full overflow-hidden relative flex items-center justify-center">
               <Image 
                 src={flavor.image} 
                 alt={`${flavor.name} Sky Drink`} 
                 width={800}
-                class="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
+                class="max-w-full max-h-full object-contain transform transition-transform duration-700"
               />
               <!-- Mobile: always visible overlay. Desktop: on hover only -->
-              <div class="absolute inset-0 bg-black/50 lg:bg-black/40 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm lg:backdrop-blur-none lg:group-hover:backdrop-blur-sm">
+              <div class="absolute inset-0 bg-black/60 lg:bg-black/50 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm lg:group-hover:backdrop-blur-sm">
                 <div class="text-center p-6 lg:translate-y-8 lg:group-hover:translate-y-0 transition-transform duration-500">
                   <h3 class="text-4xl font-black uppercase mb-3 drop-shadow-lg text-white">{flavor.name}</h3>
                   <p class="text-zinc-200 font-medium text-lg mb-6">{flavor.description}</p>

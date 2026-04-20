@@ -6,6 +6,17 @@ import promoVideo from "../assets/Sky-Drink-promo.mp4";
   class="relative min-h-screen flex items-center pt-20 overflow-hidden"
   id="showcase"
 >
+  <style>
+    @keyframes video-fade {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .video-fade-loop {
+      animation: video-fade 8s infinite;
+    }
+  </style>
   <!-- Glowing Background Ambience -->
   <div
     class="absolute top-1/4 left-1/4 w-96 h-96 bg-yellow-500/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
@@ -91,7 +102,7 @@ import promoVideo from "../assets/Sky-Drink-promo.mp4";
       class="order-1 lg:order-2 flex justify-center lg:justify-end relative gs-fade-up gs-delay"
     >
       <div
-        class="relative w-full max-w-sm shrink-0 aspect-[9/16] group clickable"
+        class="relative w-full max-w-[280px] shrink-0 aspect-[9/16] group clickable"
       >
         <!-- Optional: A very subtle glow behind the bottle since it's transparent, helping it pop -->
         <div
@@ -104,7 +115,7 @@ import promoVideo from "../assets/Sky-Drink-promo.mp4";
           loop
           muted
           playsinline
-          class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700 relative z-10"
+          class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700 relative z-10 video-fade-loop [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]"
         ></video>
 
         <div
