@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import taglineImg from '../assets/tagline.png';
+---
+
+<section class="py-24 bg-black relative overflow-hidden">
+  <div class="absolute top-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMzMzMiPjwvcmVjdD4KPC9zdmc+')] opacity-50"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pr-8 md:pr-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      <div class="clickable relative rounded-3xl overflow-hidden border-8 border-yellow-400 rotate-[-2deg] hover:rotate-[2deg] hover:scale-105 transition-all duration-500 shadow-2xl shadow-orange-500/20 gs-fade-up">
+        <Image src={taglineImg} alt="Only in 20 Rupees" class="w-full h-auto object-cover" width={1000} />
+      </div>
+
+      <div class="flex flex-col gap-8 text-center md:text-left gs-fade-up gs-delay">
+        <h2 class="text-5xl md:text-7xl font-black uppercase leading-tight text-white">
+          Unbeatable <br/><span class="text-yellow-400">Energy.</span><br/>
+          Unbeatable <br/><span class="text-orange-500">Price.</span>
+        </h2>
+        <p class="text-2xl text-zinc-300 font-medium border-l-4 border-yellow-400 pl-6 py-2">
+          Premium taste, maximum energy, zero excuses. At just ₹20, Sky Drink is built for every hustler.
+        </p>
+        
+        <div class="grid grid-cols-2 gap-6 mt-4">
+          <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 flex flex-col items-center md:items-start hover:border-orange-500 transition-colors clickable group">
+            <!-- Flame icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-orange-500 mb-4 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            <h4 class="text-xl font-bold uppercase mb-1 text-white">Instant Energy</h4>
+            <p class="text-zinc-500 text-sm">Kickstart your day in seconds.</p>
+          </div>
+          <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 flex flex-col items-center md:items-start hover:border-yellow-500 transition-colors clickable group">
+            <!-- Crosshair icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-yellow-500 mb-4 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="6"/><line x1="12" x2="12" y1="18" y2="22"/></svg>
+            <h4 class="text-xl font-bold uppercase mb-1 text-white">Laser Focus</h4>
+            <p class="text-zinc-500 text-sm">Stay locked in on your goals.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

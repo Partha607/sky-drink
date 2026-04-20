@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* ── Theme Tokens (Tailwind v4 CSS-based config) ── */
+@theme {
+  --font-sans: 'Inter', 'Oswald', ui-sans-serif, system-ui, sans-serif;
+
+  --color-neon-yellow: #facc15;
+  --color-neon-orange: #f97316;
+  --color-neon-green: #4ade80;
+  --color-neon-pink: #f472b6;
+
+  --animate-marquee: marquee 20s linear infinite;
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* ── Base resets ── */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE / Edge */
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+body {
+  background-color: var(--color-zinc-950);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Custom cursor – desktop only */
+@media (min-width: 768px) {
+  body,
+  a, button, .clickable { cursor: none; }
+}
+
+/* Touch-action safety on interactive elements */
+a, button, .clickable {
+  touch-action: manipulation;
+}
+
+/* Text selection */
+::selection {
+  background: var(--color-yellow-400);
+  color: black;
+}

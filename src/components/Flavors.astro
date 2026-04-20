@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import mangoFizz from '../assets/mango-fizz.png';
+import lycheeFizz from '../assets/lychee-fizz.png';
+import spiceVibe from '../assets/spice-vibe.png';
+
+const flavors = [
+  {
+    name: 'Mango Fizz',
+    image: mangoFizz,
+    color: 'from-orange-500 to-yellow-500',
+    description: 'The tropical king, carbonated to perfection. Instant energy.'
+  },
+  {
+    name: 'Lychee Fizz',
+    image: lycheeFizz,
+    color: 'from-pink-500 to-pink-400',
+    description: 'Sweet, sharp, and refreshing. Fuel for your hustle.'
+  },
+  {
+    name: 'Spice Vibe',
+    image: spiceVibe,
+    color: 'from-green-600 to-green-400',
+    description: 'Northeast pride in a bottle. Bold, spiced, and unstoppable.'
+  }
+];
+---
+
+<section id="flavors" class="py-24 bg-zinc-900 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pr-8 md:pr-12">
+    <div class="text-center mb-16 gs-fade-up">
+      <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">Choose Your <span class="text-yellow-400">Hustle</span></h2>
+      <p class="text-zinc-400 text-xl max-w-2xl mx-auto font-medium">Three explosive flavors designed to keep you going. Which vibe are you on today?</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {flavors.map((flavor) => (
+        <div class="clickable group relative rounded-3xl overflow-hidden gs-fade-up">
+          <div class:list={[`absolute -inset-1 bg-gradient-to-r rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-500`, flavor.color]}></div>
+          
+          <div class="relative bg-zinc-950 rounded-3xl overflow-hidden h-[600px] flex flex-col border border-zinc-800">
+            <div class="w-full h-full overflow-hidden relative">
+              <Image 
+                src={flavor.image} 
+                alt={`${flavor.name} Sky Drink`} 
+                width={800}
+                class="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
+              />
+              <!-- Mobile: always visible overlay. Desktop: on hover only -->
+              <div class="absolute inset-0 bg-black/50 lg:bg-black/40 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm lg:backdrop-blur-none lg:group-hover:backdrop-blur-sm">
+                <div class="text-center p-6 lg:translate-y-8 lg:group-hover:translate-y-0 transition-transform duration-500">
+                  <h3 class="text-4xl font-black uppercase mb-3 drop-shadow-lg text-white">{flavor.name}</h3>
+                  <p class="text-zinc-200 font-medium text-lg mb-6">{flavor.description}</p>
+                  <button class="bg-white text-black font-black uppercase px-6 py-4 lg:py-2 rounded-full hover:scale-105 active:scale-95 transition-transform">
+                    Grab Yours
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

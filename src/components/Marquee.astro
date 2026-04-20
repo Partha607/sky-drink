@@ -1,0 +1,23 @@
+---
+const bannerItems = [
+  "Work Hard. No Excuses.",
+  "Only ₹20",
+  "Fuel Your Hustle",
+  "Guwahati Pride",
+  "Strong. Proud. Unstoppable."
+];
+
+const loopItems = [...bannerItems, ...bannerItems, ...bannerItems, ...bannerItems];
+---
+
+<div class="bg-yellow-400 text-black py-4 overflow-hidden flex whitespace-nowrap border-y-4 border-white clickable group relative z-20">
+  <div class="animate-marquee flex items-center md:group-hover:[animation-play-state:paused]">
+    {loopItems.map((text) => (
+      <div class="flex items-center gap-8 font-black uppercase text-2xl tracking-widest pl-8">
+        <span>{text}</span>
+        <!-- Zap inline SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-black shrink-0" viewBox="0 0 24 24" fill="black" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+      </div>
+    ))}
+  </div>
+</div>
